@@ -1,14 +1,16 @@
-- [1. ImageJ_Script](#1-imagej_script)
-  - [1.1. 截图](#11-截图)
-    - [1.1.1. 手动截图的步骤](#111-手动截图的步骤)
-    - [1.1.2. 半自动截图脚本(Crop&Save.ijm)](#112-半自动截图脚本cropsaveijm)
-    - [1.1.3. 快捷键快速截图(press_c2AutoCrop.ijm)](#113-快捷键快速截图press_c2autocropijm)
-  - [1.2. Scale Bar](#12-scale-bar)
-    - [1.2.1. 手动添加Scale Bar](#121-手动添加scale-bar)
-    - [1.2.2. 自动添加Scale Bar(ScaleBar.ijm)](#122-自动添加scale-barscalebarijm)
-  - [1.3. 图片拼接](#13-图片拼接)
-    - [1.3.1. 手动图片拼接](#131-手动图片拼接)
-    - [1.3.2. 自动图片拼接(autoStitching)](#132-自动图片拼接autostitching)
+- [1. ImageJ\_Script](#1-imagej_script)
+	- [1.1. 截图](#11-截图)
+		- [1.1.1. 手动截图的步骤](#111-手动截图的步骤)
+		- [1.1.2. 半自动截图脚本(Crop\&Save.ijm)](#112-半自动截图脚本cropsaveijm)
+		- [1.1.3. 快捷键快速截图(press\_c2AutoCrop.ijm)](#113-快捷键快速截图press_c2autocropijm)
+		- [1.1.4. 截取固定区域图片(Corp.ijm)](#114-截取固定区域图片corpijm)
+	- [1.2. Scale Bar](#12-scale-bar)
+		- [1.2.1. 手动添加Scale Bar](#121-手动添加scale-bar)
+		- [1.2.2. 自动添加Scale Bar(ScaleBar.ijm)](#122-自动添加scale-barscalebarijm)
+	- [1.3. 图片拼接](#13-图片拼接)
+		- [1.3.1. 手动图片拼接](#131-手动图片拼接)
+		- [1.3.2. 自动图片拼接(autoStitching)](#132-自动图片拼接autostitching)
+
 # 1. ImageJ_Script
 Fiji官网下载地址：https://imagej.net/software/fiji/
 
@@ -49,6 +51,31 @@ macro "myAutoCorp [c]" {
 	run("Crop");//截图
 	run("Save");//保存，这个保存可能有一定的问题，仅支持tif，因为tif使用Save可以直接原位替换，而bmp等格式可能需要使用Save As
 	run("Open Next");//开启下一个
+}
+```
+### 1.1.4. 截取固定区域图片(Corp.ijm)
+主要用于去除BeamGage导出的两侧黑边，程序大意为遍历文件夹下的文件如果文件以.bmp结尾，那么使用ROI manager中的第一个划区进行截取并保存为.tif。
+- 首先手动划选区并添加到ROI manager
+- 然后运行下面的遍历程序
+```java
+dir = getDirectory("Choose a Directory ");
+count = 1;
+listFiles(dir); 
+
+function listFiles(dir) {
+	list = getFileList(dir);
+	for (i=0; i<list.length; i++) {
+		print((count++) + ": " + dir + list[i]);
+		if (endsWith(list[i], ".bmp"))
+   			Crop(dir + list[i]);
+}}
+
+function Crop(path) { 
+	open(path);
+	roiManager("Select", 0);
+	run("Crop");
+	saveAs("tiff", path);
+	close();
 }
 ```
 ## 1.2. Scale Bar
