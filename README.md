@@ -10,6 +10,7 @@
 	- [1.3. 图片拼接](#13-图片拼接)
 		- [1.3.1. 手动图片拼接](#131-手动图片拼接)
 		- [1.3.2. 自动图片拼接(autoStitching)](#132-自动图片拼接autostitching)
+- [2. 一些碎碎念](#2-一些碎碎念)
 
 # 1. ImageJ_Script
 Fiji官网下载地址：https://imagej.net/software/fiji/
@@ -164,3 +165,6 @@ for curDir, dirs, files in os.walk(path):
                 f.write(goupAll.group(0)+' ')
 
 ```
+# 2. 一些碎碎念
+- b站[思语视觉](https://space.bilibili.com/386533292)，有一些ImageJ的使用教程，现在还是个小up，私信问他会回答。
+- Marco有点难用，主要是基本的东西不好查，只能翻[官方文档](https://imagej.net/ij/macros)，好在有Recorder，而且好像有PyImageJ，可以试试。
