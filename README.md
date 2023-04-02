@@ -124,6 +124,7 @@ function replaceSave(path) {
 - 建立画布。`File`→`New`→`TrakEM2(blank)`，在TrakEM2窗口中Layers→Top Level[layer set]右键，选择`Resize LayerSet...`，建立一个足够大的画布。
 - 拼接图片。将待拼接的图片拖入画布中进行拼接，键盘PageDown、PageUp可以快速调整图片上下层，空格键可以快速切换选中图片透明度为100或50。
 - 输出图片。使用ROI manager(`Analyze`→`Tools`→`ROI manager...`)，固定划区域位置。右键划出的区域选择`Export`→`make flat image..`。在Choose窗口中，Type改为RGB，8bit为灰度图片；Export下拉栏选择Save to file；保存图片。
+
 建议：一开始拼好的图片锁定，作为后续拼图的基准，这样所有图基准相同。
 ### 1.3.2. 自动图片拼接(autoStitching)
 主要使用插件：`Plugins`→`Stitching`→`Grid/Collection stitching`，大概就是用python正则匹配命名，然后生成一个.ijm，Fiji运行.ijm进行拼接。
