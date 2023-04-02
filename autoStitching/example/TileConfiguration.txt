@@ -1,0 +1,6 @@
+# Define the number of dimensions we are working on
+dim = 2
+
+# Define the image coordinates
+1-28mm-45бу-46-1.bgData_0001.tif; ; (0.0, 0.0)
+1-28mm-45бу-46-2.bgData_0001.tif; ; (0.0, 0.0)

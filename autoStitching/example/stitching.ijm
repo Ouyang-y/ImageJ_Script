@@ -1,0 +1,18 @@
+run("Grid/Collection stitching","type=[Unknown position] order=[All files in directory] directory=D:/autoSticthing/example confirm_files output_textfile_name=TileConfiguration.txt fusion_method=[Linear Blending] regression_threshold=0.30 max/avg_displacement_threshold=2.50 absolute_displacement_threshold=3.50 computation_parameters=[Save memory (but be slower)] image_output=[Fuse and display] 1-26mm-10бу-48-1.bgdata_0001.tif 1-26mm-10бу-48-2.bgdata_0001.tif ");
+run("RGB Color");
+saveAs("Tiff", "D:/autoSticthing/example/output/1-26mm-10бу-48.tif");
+close();
+selectWindow("Fused");
+close();
+run("Grid/Collection stitching","type=[Unknown position] order=[All files in directory] directory=D:/autoSticthing/example confirm_files output_textfile_name=TileConfiguration.txt fusion_method=[Linear Blending] regression_threshold=0.30 max/avg_displacement_threshold=2.50 absolute_displacement_threshold=3.50 computation_parameters=[Save memory (but be slower)] image_output=[Fuse and display] 1-28mm-20бу-46-1.bgdata_0001.tif 1-28mm-20бу-46-2.bgdata_0001.tif ");
+run("RGB Color");
+saveAs("Tiff", "D:/autoSticthing/example/output/1-28mm-20бу-46.tif");
+close();
+selectWindow("Fused");
+close();
+run("Grid/Collection stitching","type=[Unknown position] order=[All files in directory] directory=D:/autoSticthing/example confirm_files output_textfile_name=TileConfiguration.txt fusion_method=[Linear Blending] regression_threshold=0.30 max/avg_displacement_threshold=2.50 absolute_displacement_threshold=3.50 computation_parameters=[Save memory (but be slower)] image_output=[Fuse and display] 1-28mm-45бу-46-1.bgdata_0001.tif 1-28mm-45бу-46-2.bgdata_0001.tif");
+run("RGB Color");
+saveAs("Tiff", "D:/autoSticthing/example/output/1-28mm-45бу-46.tif");
+close();
+selectWindow("Fused");
+close();

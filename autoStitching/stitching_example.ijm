@@ -1,0 +1,12 @@
+run("Grid/Collection stitching", "type=[Unknown position] order=[All files in directory] directory=E:/2022OuyangYang/新建文件夹 confirm_files output_textfile_name=TileConfiguration.txt fusion_method=[Linear Blending] regression_threshold=0.30 max/avg_displacement_threshold=2.50 absolute_displacement_threshold=3.50 computation_parameters=[Save memory (but be slower)] image_output=[Fuse and display] 1-6.5mm-0°-31-3.bgdata_0001.tif 1-6.5mm-0°-31-2.bgdata_0001.tif");
+run("RGB Color");
+saveAs("Tiff", "E:/2022OuyangYang/新建文件夹/output/1-6.5mm-0°-31.tif");
+close();
+selectWindow("Fused");
+close();
+run("Grid/Collection stitching", "type=[Unknown position] order=[All files in directory] directory=E:/2022OuyangYang/新建文件夹 confirm_files output_textfile_name=TileConfiguration.txt fusion_method=[Linear Blending] regression_threshold=0.30 max/avg_displacement_threshold=2.50 absolute_displacement_threshold=3.50 computation_parameters=[Save memory (but be slower)] image_output=[Fuse and display] 1-6.5mm-45°-32-1.bgdata_0001.tif 1-6.5mm-45°-32-2.bgdata_0001.tif");
+run("RGB Color");
+saveAs("Tiff", "E:/2022OuyangYang/新建文件夹/output/1-6.5mm-45°-32.tif");
+close();
+selectWindow("Fused");
+close();
